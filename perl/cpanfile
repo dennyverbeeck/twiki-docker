@@ -24,3 +24,4 @@ requires 'Digest::base';
 requires 'Digest::SHA1';
 requires 'Locale::Maketext::Lexicon';
 requires 'URI';
+requires 'LWP';

@@ -12,13 +12,15 @@ if [ -f /data/data/mime.types ] ; then
   echo "removing stock data ..."
   rm -rf /var/www/twiki/data
   rm -rf /var/www/twiki/pub
+  rm -rf /var/www/twiki/lib
 else
   echo "moving stock data ..."
-  mv /var/www/twiki/data /var/www/twiki/pub /data/
+  cp -r /var/www/twiki/data /var/www/twiki/pub /var/www/twiki/lib /data/ && rm -rf /var/www/twiki/data /var/www/twiki/pub /var/www/twiki/lib
 fi
 
 # create the symlinks we need
 echo "linking data direcotires ..."
 ln -s /data/data /var/www/twiki/data
 ln -s /data/pub  /var/www/twiki/pub
+ln -s /data/lib  /var/www/twiki/lib
 echo "system is ready, have fun!"
